@@ -34,7 +34,8 @@
  *
  *  @note								-none
  */
-void GPIO_PeriClockControl(GPIO_RefDef_t *pGPIOx, uint8_t EnorDi){
+void GPIO_PeriClockControl(GPIO_RefDef_t *pGPIOx, uint8_t EnorDi)
+{
 
 	if(EnorDi == ENABLE)
 	{
@@ -109,18 +110,49 @@ void GPIO_PeriClockControl(GPIO_RefDef_t *pGPIOx, uint8_t EnorDi){
  *
  *  @note								-none
  */
-void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
+{
+uint32_t temp = 0;  // temp register
 
-//1. configure the mode of gpio pin
+		//1. configure the mode of gpio pin
+		if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG)
+		{
+			//the non interrupt mode
+			temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2*pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+			pGPIOHandle->pGPIOx->MODER |= temp;
+			temp = 0;
+		}else
+		{
+			// this part will code later
+		}
 
-//2. configure the speed
+		temp = 0;
 
-//3. configure the pupd settings
+		//2. configure the speed
+		temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+		pGPIOHandle->pGPIOx->OSPEEDR |= temp;
 
-//4. configure the output type
+		temp = 0;
 
-//5. configure the alternate functionality
+		//3. configure the pupd settings
+		temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+		pGPIOHandle->pGPIOx->PUPDR |= temp;
 
+		temp = 0;
+
+		//4. configure the output type
+		temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType <<  pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+		pGPIOHandle->pGPIOx->OTYPER |= temp;
+
+		temp = 0;
+
+		//5. configure the alternate functionality
+
+		if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN)
+		{
+			//Configure the alt function
+
+		}
 
 
 }
@@ -185,7 +217,7 @@ uint8_t GPIO_ReadFromInputPin(GPIO_RefDef_t *pGPIOx, uint8_t PinNumber){
  *
  *  @return 							-status of given GPIOx port
  *
- *  @note								-none
+ *  @note								-
  */
 uint16_t GPIO_ReadFromInputPort(GPIO_RefDef_t *pGPIOx){
 
