@@ -55,6 +55,35 @@ Discarded input sections
  .ARM.exidx     0x00000000        0x8 c:/eclipse/20190101-2023-gnumcueclipse-4.5.1-2018-12-r-win32.win32.x86_64/eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
  .ARM.attributes
                 0x00000000       0x20 c:/eclipse/20190101-2023-gnumcueclipse-4.5.1-2018-12-r-win32.win32.x86_64/eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f446xx_gpio_driver.o
+ .text          0x00000000        0x0 drivers/src/stm32f446xx_gpio_driver.o
+ .data          0x00000000        0x0 drivers/src/stm32f446xx_gpio_driver.o
+ .bss           0x00000000        0x0 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_info    0x00000000       0x68 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_abbrev  0x00000000       0x29 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_aranges
+                0x00000000       0x18 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000       0x7c drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000      0xa66 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000       0x22 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000       0x8e drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000       0x51 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000       0xef drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000       0x6a drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000      0x1df drivers/src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00000000      0x279 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_line    0x00000000      0x425 drivers/src/stm32f446xx_gpio_driver.o
+ .debug_str     0x00000000     0x4b7a drivers/src/stm32f446xx_gpio_driver.o
+ .comment       0x00000000       0x80 drivers/src/stm32f446xx_gpio_driver.o
+ .ARM.attributes
+                0x00000000       0x39 drivers/src/stm32f446xx_gpio_driver.o
  .group         0x00000000        0xc src/main.o
  .group         0x00000000        0xc src/main.o
  .group         0x00000000        0xc src/main.o
@@ -66,6 +95,14 @@ Discarded input sections
  .text          0x00000000        0x0 src/main.o
  .data          0x00000000        0x0 src/main.o
  .bss           0x00000000        0x0 src/main.o
+ .debug_macro   0x00000000      0xa66 src/main.o
+ .debug_macro   0x00000000       0x22 src/main.o
+ .debug_macro   0x00000000       0x8e src/main.o
+ .debug_macro   0x00000000       0x51 src/main.o
+ .debug_macro   0x00000000       0xef src/main.o
+ .debug_macro   0x00000000       0x6a src/main.o
+ .debug_macro   0x00000000      0x1df src/main.o
+ .debug_macro   0x00000000      0x279 src/main.o
  .text          0x00000000       0x14 startup/startup_stm32.o
  .data          0x00000000        0x0 startup/startup_stm32.o
  .bss           0x00000000        0x0 startup/startup_stm32.o
@@ -233,6 +270,7 @@ Linker script and memory map
 LOAD c:/eclipse/20190101-2023-gnumcueclipse-4.5.1-2018-12-r-win32.win32.x86_64/eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
 LOAD c:/eclipse/20190101-2023-gnumcueclipse-4.5.1-2018-12-r-win32.win32.x86_64/eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 LOAD c:/eclipse/20190101-2023-gnumcueclipse-4.5.1-2018-12-r-win32.win32.x86_64/eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+LOAD drivers/src/stm32f446xx_gpio_driver.o
 LOAD src/main.o
 LOAD startup/startup_stm32.o
 LOAD startup/sysmem.o
@@ -562,25 +600,17 @@ OUTPUT(stm32f4xx_drivers.elf elf32-littlearm)
  .debug_ranges  0x00000000       0x10 src/main.o
  .debug_ranges  0x00000010       0x20 startup/startup_stm32.o
 
-.debug_macro    0x00000000     0x1095
+.debug_macro    0x00000000       0x72
  .debug_macro   0x00000000       0x72 src/main.o
- .debug_macro   0x00000072      0xa66 src/main.o
- .debug_macro   0x00000ad8       0x22 src/main.o
- .debug_macro   0x00000afa       0x8e src/main.o
- .debug_macro   0x00000b88       0x51 src/main.o
- .debug_macro   0x00000bd9       0xef src/main.o
- .debug_macro   0x00000cc8       0x6a src/main.o
- .debug_macro   0x00000d32      0x1df src/main.o
- .debug_macro   0x00000f11      0x184 src/main.o
 
 .debug_line     0x00000000      0x47a
  .debug_line    0x00000000      0x3fe src/main.o
  .debug_line    0x000003fe       0x7c startup/startup_stm32.o
 
-.debug_str      0x00000000     0x4459
- .debug_str     0x00000000     0x4430 src/main.o
-                               0x458b (size before relaxing)
- .debug_str     0x00004430       0x29 startup/startup_stm32.o
+.debug_str      0x00000000     0x4a12
+ .debug_str     0x00000000     0x49e9 src/main.o
+                               0x4b44 (size before relaxing)
+ .debug_str     0x000049e9       0x29 startup/startup_stm32.o
                                  0x62 (size before relaxing)
 
 .comment        0x00000000       0x7f
