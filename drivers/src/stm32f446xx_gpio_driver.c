@@ -36,6 +36,62 @@
  */
 void GPIO_PeriClockControl(GPIO_RefDef_t *pGPIOx, uint8_t EnorDi){
 
+	if(EnorDi == ENABLE)
+	{
+		if(pGPIOx == GPIOA)
+		{
+			GPIOA_PCLK_ENB();
+		}else if(pGPIOx == GPIOB)
+		{
+			GPIOB_PCLK_ENB();
+		}else if(pGPIOx == GPIOC)
+		{
+			GPIOC_PCLK_ENB();
+		}else if(pGPIOx == GPIOD)
+		{
+			GPIOD_PCLK_ENB();
+		}else if(pGPIOx == GPIOE)
+		{
+			GPIOE_PCLK_ENB();
+		}else if(pGPIOx == GPIOF)
+		{
+			GPIOF_PCLK_ENB();
+		}else if(pGPIOx == GPIOG)
+		{
+			GPIOG_PCLK_ENB();
+		}else if(pGPIOx == GPIOH)
+		{
+			GPIOH_PCLK_ENB();
+		}
+
+	}else
+	{
+				if(pGPIOx == GPIOA)
+				{
+					GPIOA_PCLK_DI();
+				}else if(pGPIOx == GPIOB)
+				{
+					GPIOB_PCLK_DI();
+				}else if(pGPIOx == GPIOC)
+				{
+					GPIOC_PCLK_DI();
+				}else if(pGPIOx == GPIOD)
+				{
+					GPIOD_PCLK_DI();
+				}else if(pGPIOx == GPIOE)
+				{
+					GPIOE_PCLK_DI();
+				}else if(pGPIOx == GPIOF)
+				{
+					GPIOF_PCLK_DI();
+				}else if(pGPIOx == GPIOG)
+				{
+					GPIOG_PCLK_DI();
+				}else if(pGPIOx == GPIOH)
+				{
+					GPIOH_PCLK_DI();
+				}
+	}
 }
 
 /* Init and De- init */
@@ -54,6 +110,18 @@ void GPIO_PeriClockControl(GPIO_RefDef_t *pGPIOx, uint8_t EnorDi){
  *  @note								-none
  */
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
+
+//1. configure the mode of gpio pin
+
+//2. configure the speed
+
+//3. configure the pupd settings
+
+//4. configure the output type
+
+//5. configure the alternate functionality
+
+
 
 }
 
@@ -74,6 +142,11 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
  *  @note								-none
  */
 void GPIO_DeInit(GPIO_RefDef_t *pGPIOx){
+
+
+
+
+
 
 
 }
