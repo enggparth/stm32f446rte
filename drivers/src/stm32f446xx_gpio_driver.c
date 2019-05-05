@@ -168,6 +168,7 @@ void GPIO_DeInit(GPIO_RefDef_t *pGPIOx){
  */
 uint8_t GPIO_ReadFromInputPin(GPIO_RefDef_t *pGPIOx, uint8_t PinNumber){
 
+	return 0;
 }
 
 
@@ -188,6 +189,7 @@ uint8_t GPIO_ReadFromInputPin(GPIO_RefDef_t *pGPIOx, uint8_t PinNumber){
  */
 uint16_t GPIO_ReadFromInputPort(GPIO_RefDef_t *pGPIOx){
 
+	return 0;
 }
 
 

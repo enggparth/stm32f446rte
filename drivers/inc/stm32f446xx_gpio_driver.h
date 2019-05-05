@@ -44,10 +44,11 @@
 typedef struct
 {
 
-	uint8_t GPIO_PinNumber;  /* uint8(one byte) is sufficient because pin number range from 0 to 15    */
-	uint8_t GPIO_PinMode;
-	uint8_t GPIO_PinPuPdControl;
-	uint8_t GPIO_PinOPType;
+	uint8_t GPIO_PinNumber;                 /*|< Possible values @GPIO_PIN_NUMBER >|*/
+	uint8_t GPIO_PinMode;					/*|< Possible values @GPIO_PIN_MODES >|*/
+	uint8_t GPIO_PinSpeed;					/*|< Possible values @GPIO_PIN_SPEED >|*/
+	uint8_t GPIO_PinPuPdControl;			/*|< Possible values @GPIO_PIN_PU_PD >|*/
+	uint8_t GPIO_PinOPType;					/*|< Possible values @GPIO_PIN_OUTPUT >|*/
 	uint8_t GPIO_PinAltFunMode;
 
 }GPIO_PinConfig_t;
@@ -72,8 +73,74 @@ typedef struct
 }GPIO_Handle_t;
 
 
+/*
+ * @GPIO_PIN_NUMBER
+ * GPIO pin numbers
+ */
+
+#define GPIO_PIN_NO_0					0
+#define GPIO_PIN_NO_1					1
+#define GPIO_PIN_NO_2					2
+#define GPIO_PIN_NO_3					3
+#define GPIO_PIN_NO_4					4
+#define GPIO_PIN_NO_5					5
+#define GPIO_PIN_NO_6					6
+#define GPIO_PIN_NO_7					7
+#define GPIO_PIN_NO_8					8
+#define GPIO_PIN_NO_9					9
+#define GPIO_PIN_NO_10					10
+#define GPIO_PIN_NO_11					11
+#define GPIO_PIN_NO_12					12
+#define GPIO_PIN_NO_13					13
+#define GPIO_PIN_NO_14					14
+#define GPIO_PIN_NO_15					15
 
 
+/*
+ * @GPIO_PIN_MODES
+ * GPIO pin possible modes
+ */
+
+//Non Interrupt modes
+#define GPIO_MODE_IN					0
+#define GPIO_MODE_OUT					1
+#define GPIO_MODE_ALTFN					2
+#define GPIO_MODE_ANALOG 				3
+
+//Interrupt modes
+#define GPIO_MODE_IT_FT					4 			 //Input Falling edge Trigger interrupt mode (FT-> Falling Trigger)
+#define GPIO_MODE_IT_RT					5			 //Input Rising edge Trigger interrupt mode (RT-> RisingTrigger	)
+#define GPIO_MODE_IT_RFT				6			 //Input Falling and Rising edge Trigger interrupt mode (RFT-> Rising and Falling  Trigger)
+
+
+/*
+ * @GPIO_PIN_OUTPUT
+ * GPIO pin possible output types
+ */
+
+#define GPIO_OP_TYPE_PP     			0
+#define GPIO_OP_TYPE_OD					1
+
+
+
+/*
+ * @GPIO_PIN_SPEED
+ * GPIO pin possible output speed type
+ */
+
+#define GPIO_SPEED_LOW							0 		// Output Low speed
+#define GPIO_SPEED_MEDIUM						1		// Output Medium speed
+#define GPIO_SPEED_HIGH							2		// Output High speed
+#define GPIO_SPEED_FAST							3		// Output Fast speed
+
+/*
+ * @GPIO_PIN_PU_PD
+ * GPIO pin possible Pull up AND Pull Down configuration macros
+ */
+
+#define GPIO_NO_PUPD							0    //No pull up pul down
+#define GPIO_PIN_PU								1	 // Pull up
+#define GPIO_PIN_PD								2	 // Pull down
 
 /* GPIO driver APIs Requirement are as follow
  *
